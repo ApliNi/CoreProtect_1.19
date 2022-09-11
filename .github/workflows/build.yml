@@ -26,3 +26,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+      - name: Archive Paperclip
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: cc
+          path: /home/runner/work/CoreProtect/CoreProtect/target/*.jar
+
